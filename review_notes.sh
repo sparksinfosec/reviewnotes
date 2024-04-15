@@ -12,26 +12,26 @@ while IFS='' read -r -u 3 line || [[ -n "$line" ]]; do
 	header_prefix="##"
 	case $line in
 		\#*)
-			read -p "> Header: $line"
+			read -p "> $line"
 			;;
 
 		\**)
-			read -p "Note: $line"
+			read -p ">> $line"
 			;;
 		"    *"*)
-			read -p "This is a subnote: $line"
+			read -p ">>> $line"
 			;;
 		1*)
-			read -p "List: $line"
+			read -p ">> $line"
 			;;
 		"    1"*)
-			read -p "Sub List: $line"
+			read -p ">>> $line"
 			;;
 		-*)
-			read -p "Line Break"
+			read -p "---"
 			;;
 		''*)
-			read -p "---"
+			read -p "~~~"
 			;;
 		*)
 			echo "*Error Case*: $line"
