@@ -39,6 +39,7 @@ while IFS='' read -r -u 3 line || [[ -n "$line" ]]; do
 	esac
 done 
 
+# Think about other markdown formatting like block quotes and such 
 # Also look at when you might want to clear (are you really wanting to clear tho)
 # Might be important to format and Make it easier to read so you can view the full file at the end 
 # TO DOs:
