@@ -8,3 +8,8 @@ Bash script to review markdown notes line by line
 * Will add some samples files for formatting however essentially the markdown notes consist of # for headers
 * * For bullets 
 * 1. For numbered list 
+
+## Look to add 
+
+* Add additional markdown formatting 
+* For example block quotes > 
