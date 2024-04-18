@@ -22,10 +22,10 @@ while IFS= read -r -u 3 line || [[ -n "$line" ]]; do
 			read -p ">>> $line"
 			;;
 		1*)
-			read -p ">> $line"
+			read -p "># $line"
 			;;
 		"    1"*)
-			read -p ">>> $line"
+			read -p ">># $line"
 			;;
 		-*)
 			read -p "---"
