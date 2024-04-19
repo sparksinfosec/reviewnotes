@@ -39,9 +39,7 @@ while IFS= read -r -u 3 line || [[ -n "$line" ]]; do
 	esac
 done 
 
-# Think about other markdown formatting like block quotes and such 
-# Also look at when you might want to clear (are you really wanting to clear tho)
-# Might be important to format and Make it easier to read so you can view the full file at the end 
 # TO DOs:
-# go over the formatting and make it nice
-# Think about clears but might not be needed:
+# Think about other markdown formatting like block quotes and such 
+# IMPORTANT see if you can add a way to read from specific sections of the file such as # Review would just review the header section that is called review 
+# Maybe list the headers if possible (maybe another case statment) 
