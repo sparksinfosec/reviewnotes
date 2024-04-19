@@ -7,9 +7,6 @@ echo ""
 
 exec 3<"$1"
 while IFS= read -r -u 3 line || [[ -n "$line" ]]; do
-	#read -p "> $line"
-	#test=$line
-	header_prefix="##"
 	case $line in
 		\#*)
 			read -p "> $line"
