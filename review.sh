@@ -25,9 +25,7 @@ then # Then read in file and use awk to print from 3 input (header name) to next
 	echo ""
 	echo "You are reviewing $1"
 	echo ""
-	awk '/^#.*/{f=0} /^#.*'$3'/{f=1} f' $1 # Not working but the idea is good search for a word then print to EOF 
-	# but we also want to print until another header or EOF 
-	# awk or sed for this 
+	awk '/^#.*/{f=0} /^#.*'$3'/{f=1} f' $1 # awk begin and end check starts with the $3 with # in front to the next #
 
 elif [ -f "$1" ] # lastly if no other input and the file exist 
 then
@@ -57,10 +55,15 @@ then
 		       -*)
 			       read -p "---"
 			       ;;
+		       '    ```'*)
+			       read -p "Code Block"
+			       ;;
+		       '    '**) #adding to read the code block must be at least 4 spaces (prints anything indented/4 spaces)
+			       read -p "Code> $line"
+			       ;;
 		       ''*)
 			       read -p "~~~"
 			       ;;
-		#Need to add code block read option
 		       *)
 			       echo "*Error Case*: $line"
 			       ;;
