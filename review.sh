@@ -60,6 +60,7 @@ then
 		       ''*)
 			       read -p "~~~"
 			       ;;
+		#Need to add code block read option
 		       *)
 			       echo "*Error Case*: $line"
 			       ;;
