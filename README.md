@@ -14,7 +14,12 @@ Bash script to review markdown notes line by line
 * * For bullets 
 * 1. For numbered list 
 * Indented *
-* Code blocks (really reading tabs spaces and ```)
+* Code blocks (really reading tabs spaces and \`\`\`)
 
 ## Look to add 
 
+* Look to add support for three level list (both unordered and ordered?)
+    * Because it looks like it does work
+        * And could be useful in the future 
+* Make sure this does interfere with the tabs and spaces set for code blocks already established 
+* Might be best if you use the literal with * to look at three level list 
