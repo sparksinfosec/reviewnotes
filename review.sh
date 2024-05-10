@@ -55,6 +55,9 @@ then
 		       "    1"*)
 			       read -p ">># $line"
 			       ;;
+               "        1"*)
+                   read -p ">>># $line"
+                   ;;
 		       -*)
 			       read -p "---"
 			       ;;
