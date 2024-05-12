@@ -15,6 +15,9 @@ Bash script to review markdown notes line by line
 * 1. For numbered list 
 * Indented *
 * Code blocks (really reading tabs spaces and \`\`\`)
+* OG readme script is the original case statement created 
+* Split it off into the new script to keep the original case statement and adding the logic, plus additional execeptions for expanded markdown formatting
+* Also renamed the script to just review and added to .local bin to make it easier to run 
 
 ## Look to add 
 

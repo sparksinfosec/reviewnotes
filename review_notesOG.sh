@@ -36,7 +36,5 @@ while IFS= read -r -u 3 line || [[ -n "$line" ]]; do
 	esac
 done 
 
-# TO DOs:
-# Think about other markdown formatting like block quotes and such 
-# IMPORTANT see if you can add a way to read from specific sections of the file such as # Review would just review the header section that is called review 
-# Maybe list the headers if possible (maybe another case statment) 
+# This is the OG case statment that started the reviewmarkdown script 
+# has since expanded plus logic added for the read and list options/switches/arguments
