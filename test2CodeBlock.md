@@ -13,6 +13,8 @@
 
 #### Lesson 7.3 Completion 
 
+---
+
 * Command line completion with CTRL-D and <TAB>
 * Make sure Vim is not in compatible mode :set nocp
 * Look what files exist in the directory :!ls or :!dir 
@@ -26,6 +28,8 @@
     * It is especially useful for :help 
 
 #### Lesson 7 Summary 
+
+---
 
 * Type :help or press F1 or <HELP> to open help window 
 * Type :help cmd to find help on cmd 
