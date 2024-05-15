@@ -46,7 +46,7 @@ then
 		       "    *"*)
 			       read -p ">>> $line"
 			       ;;
-               "        *"*) # third level unorder list
+               "        *"*)
                    read -p ">>>> $line"
                    ;;
 		       1*)
@@ -55,7 +55,7 @@ then
 		       "    1"*)
 			       read -p ">># $line"
 			       ;;
-               "        1"*) # third level indention ordered list 
+               "        1"*)
                    read -p ">>># $line"
                    ;;
 		       -*)
@@ -67,7 +67,7 @@ then
 		       '    '**) #adding to read the code block must be at least 4 spaces (prints anything indented/4 spaces)
 			       read -p "Code> $line"
 			       ;;
-		       ''*) # this needs to stay at the end because it essentially looking for an empty string 
+		       ''*)
 			       read -p "~~~"
 			       ;;
 		       *)
