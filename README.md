@@ -2,6 +2,8 @@
 
 Bash script to review markdown notes line by line 
 
+* Note added final version to my dot file under scripts since running this everyday (updated changes will likely be made there)
+
 * Created because in 2023 I began to take notes via markdown in order to get more familar with vi, git, and git-bash
 * To also encourage me to review these notes daily I made this little script to read out the lines notes 
 * Enter will produce the next line.
