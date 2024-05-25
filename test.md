@@ -408,7 +408,7 @@
 
 
     ```
-	if one = one 
+    if one = one 
            Then do 
         fi 
     ```
