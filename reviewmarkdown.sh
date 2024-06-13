@@ -48,11 +48,17 @@ then
 		       \**)
 			       read -rp "${cyan}>> $line${reset} "
 			       ;;
-		       "    *"*)
+		       "    *"*) # One indent *
 			       read -rp "${cyan}>>> $line${reset} "
 			       ;;
-               "        *"*)
+               "        *"*) #two level indent *
                    read -rp "${cyan}>>>> $line${reset} "
+                   ;;
+               "            *"*) # * Third level indent this is the max (not sure if supported everywhere)
+                   read -rp "${cyan}>>>>> $line${reset} "
+                   ;;
+               "            1"*)
+                   read -rp "${yellow}>>>># $line${reset} "
                    ;;
 		       1*)
 			       read -rp "${yellow}># $line${reset} "
