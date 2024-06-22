@@ -10,6 +10,8 @@ cyan=$'\e[36m'
 reset=$'\e[0m'
 
 
+linecount=$(wc -l "$1" | awk '{print $1}')
+
 if [[ "$2" == "list" && -f "$1" ]] #if second input of command is list plus the file exist (first input)
 then # Then we will read in file and just print out all headers 
 	exec 3<"$1"
@@ -38,51 +40,66 @@ then
        exec 3<"$1"
        echo ""
        printf "${red}You are reviewing %s$reset\n" "${1}" # instead of echo -e 
+       printf "${red}$linecount total lines\n ${reset}"
        echo ""
+       count=0
        while IFS= read -r -u 3 line || [[ -n "$line" ]]; do
                 case $line in
 		       \#*)
-		               read -rp "${green}> $line ${reset} "
+		               read -rp "${count}${green} > $line ${reset} "
+                       ((count++))
 			       ;;
-
 		       \**)
-			       read -rp "${cyan}>> $line${reset} "
+			       read -rp "${count}${cyan} >> $line${reset} "
+                   ((count++))
 			       ;;
 		       "    *"*) # One indent *
-			       read -rp "${cyan}>>> $line${reset} "
+			       read -rp "${count}${cyan} >>> $line${reset} "
+                   ((count++))
 			       ;;
                "        *"*) #two level indent *
-                   read -rp "${cyan}>>>> $line${reset} "
+                   read -rp "${count}${cyan} >>>> $line${reset} "
+                   ((count++))
                    ;;
                "            *"*) # * Third level indent this is the max (not sure if supported everywhere)
-                   read -rp "${cyan}>>>>> $line${reset} "
+                   read -rp "${count}${cyan} >>>>> $line${reset} "
+                   ((count++))
                    ;;
                "            1"*)
-                   read -rp "${yellow}>>>># $line${reset} "
+                   read -rp "${count}${yellow} >>>># $line${reset} "
+                   ((count++))
                    ;;
 		       1*)
-			       read -rp "${yellow}># $line${reset} "
+			       read -rp "${count}${yellow} ># $line${reset} "
+                   ((count++))
 			       ;;
 		       "    1"*)
-			       read -rp "${yellow}>># $line${reset} "
+			       read -rp "${count}${yellow} >># $line${reset} "
+                   ((count++))
 			       ;;
                "        1"*)
-                   read -rp "${yellow}>>># $line${reset} "
+                   read -rp "${count}${yellow} >>># $line${reset} "
+                   ((count++))
                    ;;
 		       -*)
-			       read -rp "--- "
+			       read -rp "${count} --- "
+                   ((count++))
 			       ;;
 		       '    ```'*)
-			       read -rp "${magenta}Code Block${reset} "
+			       read -rp "${count}${magenta} Code Block${reset} "
+                   ((count++))
 			       ;;
 		       '    '**) #adding to read the code block must be at least 4 spaces (prints anything indented/4 spaces)
-			       read -rp "${green}Code> $line${reset} "
+			       read -rp "${count}${green} Code> $line${reset} "
+                   ((count++))
 			       ;;
 		       ''*) #This pattern always overrides a later one on line 73
-			       read -rp "~~~ $line" #putting the line just in case something other than blank like is here
+			       read -rp "${count} ~~~ $line" #putting the line just in case something other than blank like is here
+                   ((count++))
 			       ;;
 		       *) #Essentially this should next execute 
-			       read -rp "*Error Case*: $line"
+			       read -rp "${count} *Error Case*: $line"
+                   ((count++))
 			       ;;
 	        esac
        done 
