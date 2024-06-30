@@ -2,6 +2,8 @@
 
 # Only other thing I think might be needed is to take the read search term $3 and not have to have it exact match (maybe ask for input)
 
+# NOTE: Only support 3 levels of indents on ordered and unorder list currently 
+
 magenta=$'\e[35m'
 red=$'\e[31m'
 green=$'\e[32m'
