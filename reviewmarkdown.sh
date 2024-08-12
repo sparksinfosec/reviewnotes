@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-# Only other thing I think might be needed is to take the read search term $3 and not have to have it exact match (maybe ask for input)
+# Only other thing I think might be needed is to take the read search term $3 and not have to have it exact match 
+# This might mean we have to modify awk statement or grep -i
 
-# NOTE: Only support 3 levels of indents on ordered and unorder list currently 
+# NOTE: Only support 3 levels of indents on ordered and unorder list currently
+# Maybe look at better formatting 
+# Now that line numbers are included the digits throw off the foramt abit
+# Possible way to clear screen or keep at top?
 
 magenta=$'\e[35m'
 red=$'\e[31m'
